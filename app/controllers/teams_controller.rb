@@ -13,7 +13,7 @@ class TeamsController < ApplicationController
   end
 
   def create
-    @team = Team.news(team_params)
+    @team = Team.new(team_params)
 
     if @team.save
       redirect_to @team, notice: 'Team Added!'

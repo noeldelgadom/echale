@@ -1,4 +1,4 @@
-class ApiController < TeamsController
+class Api::MatchesController < MatchesController
   before_action :set_default_format
 
   private

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  local: MyString
+  visitor: MyString
+  kickoff: 2017-05-25 11:26:21
+
+two:
+  local: MyString
+  visitor: MyString
+  kickoff: 2017-05-25 11:26:21

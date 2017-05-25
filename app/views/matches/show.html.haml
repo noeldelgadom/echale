@@ -1,0 +1,16 @@
+%p= link_to 'All Matches', matches_path
+.row
+  .col-md-6.col-md-offset-3
+    .panel.panel-default
+      .panel-body
+        %h1= @match.local
+        %h1= @match.visitor
+        %p= @match.kickoff
+
+      .panel-footer
+        .row
+          .col-md-6
+            .btn-group.pull-right
+              -# - if user_signed_in?
+              = link_to 'Edit', edit_match_path, class: 'btn btn-info'
+              = link_to 'Delete', match_path, method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger'
