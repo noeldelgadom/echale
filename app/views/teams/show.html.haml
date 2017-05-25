@@ -1,0 +1,15 @@
+%p= link_to 'All Teams', teams_path
+.row
+  .col-md-6.col-md-offset-3
+    .panel.panel-default
+      .panel.heading.team_image
+        = image_tag @team.image.url
+      .panel-body
+        %h1= @team.name
+      .panel-footer
+        .row
+          .col-md-6
+            .btn-group.pull-right
+              -# - if user_signed_in?
+              = link_to 'Edit', edit_team_path, class: 'btn btn-info'
+              = link_to 'Delete', team_path, method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger'
