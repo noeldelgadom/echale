@@ -9,7 +9,8 @@
           %li msg
 
   .form-group
-    = f.input :local, input_html: { class: 'form-control'}
+    = f.input :local, collection: @teams
+
   .form-group
     = f.input :visitor, input_html: { class: 'form-control'}
   .form-group

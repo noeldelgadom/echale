@@ -1,10 +1,16 @@
-.col-md-3
-  = link_to 'New Match', new_match_path
-.col-md-6.col-md-offset-3
-  #matches.transitions-enabled
-    - @matches.each do |match|
-      .box.panel.panel-default
-        = link_to 'See More', match
-        %h2= link_to match.local, match
-        %h2= link_to match.visitor, match
-        %h2= link_to match.kickoff, match
+.row
+  .col-md-3
+    = link_to 'New Match', new_match_path
+  .col-md-6
+    #matches.transitions-enabled
+      - @matches.each do |match|
+        .panel.panel-default
+          .panel-body
+            %p= link_to match.local, match
+            %p= link_to match.visitor, match
+          .panel-footer
+            - if user_signed_in?
+              = link_to 'Echale', match, class: 'btn btn-danger pull-right'
+            - else
+              = link_to 'Echale', new_user_session_path, class: 'btn btn-danger pull-right'
+            %p= match.kickoff
