@@ -41,7 +41,7 @@ class MatchesController < ApplicationController
   private
 
     def match_params
-      params.require(:match).permit(:kickoff, :local, :visitor)
+      params.require(:match).permit(:kickoff, :local_team_id, :visitor_team_id)
     end
 
     def find_match

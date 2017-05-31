@@ -6,8 +6,8 @@
       - @matches.each do |match|
         .panel.panel-default
           .panel-body
-            %p= link_to match.local, match
-            %p= link_to match.visitor, match
+            %p= link_to match.local_team.name, match
+            %p= link_to match.visitor_team.name, match
           .panel-footer
             - if user_signed_in?
               = link_to 'Echale', match, class: 'btn btn-danger pull-right'

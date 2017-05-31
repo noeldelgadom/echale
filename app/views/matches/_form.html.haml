@@ -5,14 +5,15 @@
       = pluralize(@match.errors.count, "error")
       prevented this Match from saving
       %ul
-        - @match.errors.full_message.each do |msg|
-          %li msg
+        - @match.errors.full_messages.each do |msg|
+          %li
+            = msg
 
   .form-group
-    = f.input :local, collection: @teams
-
+    = f.select :local_team_id, Team.all.collect {|c| [ c.name, c.id ] }, include_blank: true
   .form-group
-    = f.input :visitor, input_html: { class: 'form-control'}
+    = f.select :visitor_team_id, Team.all.collect {|c| [ c.name, c.id ] }, include_blank: true
+
   .form-group
     = f.input :kickoff, input_html: { class: 'form-control'}
 

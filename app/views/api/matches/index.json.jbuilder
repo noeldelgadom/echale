@@ -1,1 +1,1 @@
-json.array! @matches, :id, :local, :visitor, :kickoff
+json.array! @matches, :id, :local_team, :visitor_team, :kickoff
