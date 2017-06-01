@@ -38,6 +38,10 @@ class MatchesController < ApplicationController
     redirect_to matches_path
   end
 
+  def update_total_purse
+    @match.total_purse = @match.local_purse + @match.tie_purse + @match.visitor_purse
+  end
+
   private
 
     def match_params

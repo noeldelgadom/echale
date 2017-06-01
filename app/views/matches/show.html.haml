@@ -2,15 +2,31 @@
 .row
   .col-md-6.col-md-offset-3
     .panel.panel-default
+      .panel-header
+        %h4
+          Kickoff
+          = @match.kickoff
       .panel-body
-        %h1= @match.local_team.name
-        %h1= @match.visitor_team.name
-        %p= @match.kickoff
+        .pull-right
+          = link_to number_with_precision(@match.total_purse / @match.local_purse,
+          precision: 2), edit_match_path, class: 'btn btn-warning'
+        %h2= @match.local_team.name
+        .pull-right
+          = link_to number_with_precision(@match.total_purse / @match.tie_purse,
+          precision: 2), edit_match_path, class: 'btn btn-warning'
+        %h2 Empate
+        .pull-right
+          = link_to number_with_precision(@match.total_purse / @match.visitor_purse,
+          precision: 2), edit_match_path, class: 'btn btn-warning'
+        %h2= @match.visitor_team.name
 
       .panel-footer
         .row
           .col-md-6
-            .btn-group
-              -# - if user_signed_in?
-              = link_to 'Edit', edit_match_path, class: 'btn btn-info'
-              = link_to 'Delete', match_path, method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger'
+            %h4
+              Amount
+          .col-md-6
+            .pull-right
+              %h4
+                Total Purse
+                = @match.total_purse
