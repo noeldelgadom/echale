@@ -10,7 +10,7 @@
       .panel-footer
         .row
           .col-md-6
-            .btn-group.pull-right
+            .btn-group
               -# - if user_signed_in?
               = link_to 'Edit', edit_match_path, class: 'btn btn-info'
               = link_to 'Delete', match_path, method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-danger'
