@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20170601001654) do
     t.datetime "updated_at", null: false
     t.integer "local_team_id"
     t.integer "visitor_team_id"
-    t.float "local_purse"
-    t.float "tie_purse"
-    t.float "visitor_purse"
-    t.float "total_purse"
+    t.float "local_purse", default: 0.0
+    t.float "tie_purse", default: 0.0
+    t.float "visitor_purse", default: 0.0
+    t.float "total_purse", default: 0.0
     t.index ["local_team_id"], name: "index_matches_on_local_team_id"
     t.index ["visitor_team_id"], name: "index_matches_on_visitor_team_id"
   end
